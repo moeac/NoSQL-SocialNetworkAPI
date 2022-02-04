@@ -25,11 +25,14 @@ const thoughtSchema = new Schema(
         toJSON: {
             virtuals: true,
             getters: true
-        }
+        },
+        id: false
     },
 );
 
-const formatDate = () => moment(date).format('DD-MM-YYYY');
+function formatDate(date) {
+    moment(date).format('DD-MM-YYYY')
+};
 
 thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
