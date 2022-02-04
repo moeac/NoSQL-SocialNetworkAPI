@@ -10,6 +10,10 @@ const thoughtSchema = new Schema(
             minlength: 1,
             maxlength: 280
         },
+        userId: {
+            type: Schema.Types.ObjectId,
+            required: true
+        },
         createdAt: {
             type: Date,
             default: Date.now(),
