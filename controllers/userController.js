@@ -40,7 +40,7 @@ module.exports = {
     },
     // delete a user and all their thoughts.. why wont they go away in real life :'(
     deleteUser(req, res) {
-        User.findOneAndRemove({ _id: req.params.userId })
+        User.findOneAndDelete({ _id: req.params.userId })
             .then((user) => 
                 !user
                     ? res.status(404).json({ message: `no user with that id to delete you fool` })
